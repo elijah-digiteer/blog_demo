@@ -1,0 +1,18 @@
+p style="color: green" = notice
+
+h1 Posts
+
+h2 Featured Posts
+#featured_posts
+  - @featured_posts.each do |post|
+    == render post
+    = link_to "Show this post", post
+
+h2 Active Posts
+#active_posts
+  - @active_posts.each do |post|
+    == render post
+    = link_to "Show this post", post
+
+= link_to "New post", new_post_path
+

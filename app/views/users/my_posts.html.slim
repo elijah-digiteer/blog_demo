@@ -1,0 +1,12 @@
+h2 My Posts
+
+- if @posts.any?
+  - @posts.each do |post|
+    .post
+      h3 = post.title
+      p = post.content
+      p Published at: #{post.published_at.strftime('%Y-%m-%d')}
+      = link_to "Edit", edit_post_path(post)
+      = link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }
+- else
+  p No posts yet!
